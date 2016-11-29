@@ -22,15 +22,18 @@ void dialogue(String[] _d)
   
   textSize(24);
   fill(255);
-  print(i);
+  print(i, " - ");
   println(_d[i]);
   text(_d[i], width/2, height/2);
 }
 
 void keyReleased()
 {
-  if(i < d.length-1)
+  if(key == 'f')
   {
-    i++;
+    if(i < d.length-1)
+    {
+      i++;
+    }
   }
 }
