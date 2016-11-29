@@ -4,11 +4,11 @@
 - timelimit: - total time the player is given to beat the game
 - damagex: damage multiplier that determines the amount of damage players take from puzzles
 - scorex: score multiplier use to boost points collected
- 
 -->
+
 <InputData>
     <health>200</health>
     <timelimit>24</timelimit>
     <damagex>1</damagex>
-    <scorex>1</score>
+    <scorex>1</scorex>
 </InputData>

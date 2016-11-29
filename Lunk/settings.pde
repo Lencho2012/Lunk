@@ -1,22 +1,28 @@
 class Parser
 {
-  String feedTitle;
-  String xmlin;
+  XML settings;
   
-  Parser(String _xmlin)
+  Parser(String _settings)            //Initiate with xml file string
   {
-    xmlin = _xmlin;
+    settings = loadXML(_settings);
   }
   
   
-  void xmlSettings()
+  XML[] getSettings()
   {
-
-  }
-  
-  void xmlOutput()
-  {
+    XML[] options = settings.getChildren();
     
+    String h = options[1].getContent();      //Health options
+    String t = options[3].getContent();      //Time settings
+    String dx = options[5].getContent();     //Damage mutliplier
+    String cx = options[7].getContent();     //Score multiplier
+
+    String[] o = new String[]{h, t, dx, cx};
+    for(String s : o)
+    {
+      println(s);
+    }
+    
+    return options;
   }
-  
 }
