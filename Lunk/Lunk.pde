@@ -1,8 +1,8 @@
 Parser settings;
 int i = 0;
-boolean end = false;
 
-String[] d = {"this", "is", "a", "test"};
+String[] d = {"this is a test", 
+              "this is another sentence"};
 
 void setup()
 {
@@ -13,18 +13,24 @@ void setup()
 
 void draw()
 {
-  background(100);
+  background(0);
+  noStroke();
   dialogue(d);
+  
 }
 
 void dialogue(String[] _d)
 {
   
-  textSize(24);
+  textSize(16);
   fill(255);
   print(i, " - ");
   println(_d[i]);
-  text(_d[i], width/2, height/2);
+  textAlign(LEFT, TOP);
+  text(_d[i], 0, height/2);
+  
+  fill(255, 0, 0, 63);  //Opacity at 25%
+  rect(0, height/2, textWidth(_d[i]), 40);
 }
 
 void keyReleased()
