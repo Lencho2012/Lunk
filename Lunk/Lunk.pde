@@ -1,6 +1,8 @@
 Parser settings;
 int i = 0;
 
+boolean intro = true;
+
 String[] d_intro = {"Lunk: Wh.. where am I?", 
                "B: Lunk, you must find the secret treasure… Only then can you escape this land...",
                "Lunk: Who… who is speaking to me?",
@@ -30,8 +32,11 @@ void draw()
 {
   background(0);
   noStroke();
-  dialogue(d_intro);
   
+  if(intro == true)
+  {
+    dialogue(d_intro);
+  }
 }
 
 void dialogue(String[] _d)
@@ -55,6 +60,12 @@ void keyReleased()
     if(i < d.length-1)
     {
       i++;
+    }
+    
+    else
+    {
+      intro = false;
+      i = 0;
     }
   }
 }
