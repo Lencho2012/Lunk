@@ -2,13 +2,13 @@ class Parser
 {
   XML settings;
   
-  Parser(String _settings)            //Initiate with xml file string
+  Parser(String _settings)                    //Initiate with xml file string
   {
     settings = loadXML(_settings);
   }
   
   
-  XML[] getSettings()
+  String[] getSettings()
   {
     XML[] options = settings.getChildren();
     
@@ -23,6 +23,6 @@ class Parser
       println(s);
     }
     
-    return options;
+    return o;                                 //Return array of options in string formats
   }
 }
