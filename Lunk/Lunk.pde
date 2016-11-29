@@ -1,8 +1,23 @@
 Parser settings;
 int i = 0;
 
-String[] d = {"this is a test", 
-              "this is another sentence"};
+String[] d_intro = {"Lunk: Wh.. where am I?", 
+               "B: Lunk, you must find the secret treasure… Only then can you escape this land...",
+               "Lunk: Who… who is speaking to me?",
+               "B: I am the one who will guide you through this journey...",
+               "Lunk: So, like, are you gonna guide me through the tutorial and stuff?",
+               "B: No, Sir. Lunk, you should have done that while in the menu screen when you started the game.",
+               "Lunk: Game?",
+               "B: Alright, look, there are three keys you need in order to access the secret treasure. You can try to get them in any order. But BEWARE! They are each guarded by puzzles that will prove to be the greatest adversaries you have ever faced...",
+               "Lunk: How can a puzzle be an adversary?",
+               "B: You take damage if you get them wrong. Get it wrong enough… and you DIE!",
+               "Lunk: Ouch.",
+               "B: Indeed.",
+               "Lunk: So, where do I start?",
+               "B: I just said you can start anywhere.",
+               "Lunk: Oh, yeah. Alright. Hey, maybe along the way you can, like, give more exposition so the player knows what’s really going on and stuff.",
+               "B: Stop talking and pick a puzzle. Ugh."};
+               
 
 void setup()
 {
@@ -15,7 +30,7 @@ void draw()
 {
   background(0);
   noStroke();
-  dialogue(d);
+  dialogue(d_intro);
   
 }
 
