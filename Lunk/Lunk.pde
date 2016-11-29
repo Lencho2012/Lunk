@@ -1,5 +1,9 @@
 Parser settings;
 int i = 0;
+int health;
+int time;
+int dx;
+int px;
 
 boolean intro = true;
 
@@ -25,7 +29,12 @@ void setup()
 {
   size(500, 500);
   settings = new Parser("settings.xml");
-  XML[] options = settings.getSettings();
+  String[] options = settings.getSettings();  //Options from xml input: health/timelimit/damagex/pointsx
+  
+  health = options[0];
+  time = options[1];
+  dx = options[2];
+  px = options[3];
 }
 
 void draw()
