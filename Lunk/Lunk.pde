@@ -13,11 +13,10 @@ Run dialogue(String[] _d) with whichever dialogue array you need for a particula
 
 Running through array - keyReleased() will update index of array and display next line when releasing 'f'
 */
-int i_d = 0;      //index for dialogue arrays
-boolean intro = true;
-boolean puzzle1 = false;      
-boolean puzzle2 = false;      
-boolean puzzle3 = false;
+int i_d = 0;                //index for dialogue arrays
+
+//intro, puzzle1, puzzle2, puzzle3
+boolean[] d_show = {false, true, false, false};
 
 String[] d_intro = {"Lunk: Wh.. where am I?", 
                "B: Lunk, you must find the secret treasure… Only then can you escape this land...",
@@ -26,7 +25,9 @@ String[] d_intro = {"Lunk: Wh.. where am I?",
                "Lunk: So, like, are you gonna guide me through the tutorial and stuff?",
                "B: No, Sir. Lunk, you should have done that while in the menu screen when you started the game.",
                "Lunk: Game?",
-               "B: Alright, look, there are three keys you need in order to access the secret treasure. You can try to get them in any order. But BEWARE! They are each guarded by puzzles that will prove to be the greatest adversaries you have ever faced...",
+               "B: Alright, nevermind. Let's just go through it. You can move with the directional keys. The spacebar will bring you to greater heights that you never thought possible...", 
+               "Lunk: Right... And so my goal here is?",
+               "B: Look, there are three puzzles you must solve to find the secret treasure. You can try to get them in any order. But BEWARE! Each will prove to be the greatest adversary you have ever faced...",
                "Lunk: How can a puzzle be an adversary?",
                "B: You take damage if you get them wrong. Get it wrong enough… and you DIE!",
                "Lunk: Ouch.",
@@ -38,15 +39,15 @@ String[] d_intro = {"Lunk: Wh.. where am I?",
                
 String[] d_puzzle1 = {"B: A new puzzle!", 
                 "Lunk: Looks hard.", 
-                "B: Deal with it. Now go find my lettu- I mean the treasure"};
+                "B: Deal with it. Now go find my lettu- I mean the treasure."};
                 
 
 String[] d_puzzle2 = {"B: A new puzzle!", 
                 "Lunk: Looks easy.", 
-                "B: It's not"};
+                "B: It's not."};
                 
 String[] d_puzzle3 = {"B: A new puzzle!", 
-                "Lunk: Looks moderatly challenging.", 
+                "Lunk: Looks moderately challenging.", 
                 "B: Sigh. Just go."};
                
 
@@ -67,15 +68,34 @@ void draw()
   background(0);
   noStroke();
   
-  if(intro == true)
+  dialogue();
+}
+
+void dialogue()      //Single method for all dialogue display
+{
+  if(d_show[0] == true)
   {
-    dialogue(d_intro);
+    dialogueDisplay(d_intro);
+  }
+  
+  else if(d_show[1] == true)
+  {
+    dialogueDisplay(d_puzzle1);
+  }
+  
+  else if(d_show[2] == true)
+  {
+    dialogueDisplay(d_puzzle2);
+  }
+  
+  else if(d_show[3] == true)
+  {
+    dialogueDisplay(d_puzzle3);
   }
 }
 
-void dialogue(String[] _d)
+void dialogueDisplay(String[] _d)    //Display a dialogue
 {
-  
   textSize(16);
   fill(255);
   print(i_d, " - ");
@@ -87,19 +107,27 @@ void dialogue(String[] _d)
   rect(0, height - height/4, width, height/2);
 }
 
-void keyReleased()
+void progressDialogue(int _db, String[] _da)  //Update displayed dialogue line and remove dialogue box when finished
 {
-  if(key == 'f')
+  if(key == 'f' && d_show[_db] == true)
   {
-    if(i_d < d_intro.length-1)  //Display next line of dialogue - hard coded for d_intro, can change for other dialogues
+    if(i_d < _da.length-1)  //Display next line of dialogue - hard coded for d_intro, can change for other dialogues
     {
       i_d++;  
     }
     
     else
     {
-      intro = false;          //Remove dialogue box and reset index value for next dialogue
+      d_show[_db] = false;          //Remove dialogue box and reset index value for next dialogue
       i_d = 0;
     }
   }
+}
+
+void keyReleased()
+{
+  progressDialogue(0, d_intro);
+  progressDialogue(1, d_puzzle1);
+  progressDialogue(2, d_puzzle2);
+  progressDialogue(3, d_puzzle3);
 }
