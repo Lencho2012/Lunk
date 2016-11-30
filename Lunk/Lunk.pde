@@ -27,14 +27,14 @@ String[] d_intro = {"Lunk: Wh.. where am I?",
 
 void setup()
 {
-  size(500, 500);
+  size(1000, 500);
   settings = new Parser("settings.xml");
   String[] options = settings.getSettings();  //Options from xml input: health/timelimit/damagex/pointsx
   
-  health = options[0];
-  time = options[1];
-  dx = options[2];
-  px = options[3];
+  //health = options[0];
+  //time = options[1];
+  //dx = options[2];
+  //px = options[3];
 }
 
 void draw()
@@ -66,7 +66,7 @@ void keyReleased()
 {
   if(key == 'f')
   {
-    if(i < d.length-1)
+    if(i < d_intro.length-1)
     {
       i++;
     }
