@@ -57,10 +57,11 @@ void setup()
   settings = new Parser("settings.xml");
   String[] options = settings.getSettings();  //Options from xml input: health/timelimit/damagex/pointsx
   
-  //health = options[0];
-  //time = options[1];
-  //dx = options[2];
-  //px = options[3];
+  health = int(options[0]);
+  time = int(options[1]);
+  dx = int(options[2]);
+  px = int(options[3]);
+ 
 }
 
 void draw()
@@ -68,7 +69,7 @@ void draw()
   background(0);
   noStroke();
   
-  dialogue();
+  //dialogue();
 }
 
 void dialogue()      //Single method for all dialogue display
