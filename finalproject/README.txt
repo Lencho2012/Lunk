@@ -1,5 +1,7 @@
 Lunk “Adventure” Puzzle Game
 
+Minim library is required for the game to run. To install the Minim library, in processing go to sketch-> import library -> add library -> search and install minim.
+
 Press Run to play.
 
 Player will be brought to a menu where they have the option of choosing between basic control instructions or starting a new game.
