@@ -1,0 +1,8 @@
+Angel
+Puzzle
+A simple maze whose trick is quite simple. Player must find the key and press the corresponding button to signal victory over the maze
+
+XML
+settings.xml can be modded to change certain aspects of gameplay, relating to score, time limit, health and score multiplier.
+
+output.xml will output the total results of the game, including player time and overall score.
