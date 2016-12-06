@@ -6,3 +6,15 @@ XML
 settings.xml can be modded to change certain aspects of gameplay, relating to score, time limit, health and score multiplier.
 
 output.xml will output the total results of the game, including player time and overall score.
+
+
+
+John 
+Puzzle 
+My puzzle is basically using the character to search the room to find the right key. I used a class called fakeKeys to spawn in about 35 different keys around the room and used a class called Key to spawn in one real key. The player can cantrol the character to move around the room to find the right key and when the character gets close enough to the real key, it means that the puzzle is solved. 
+
+Menu & Instructions
+The menu and instruction are basic keyPress and keyReleased inputs that help you navigate through the game. In order to get a smooth transition and easily seperated scenes in the game I used the switch statement with different cases. In order to go between the menu and lets say the game or the intro, a switch in cases needed to occur, which was used by having a state variable that was changed after certain actions. I also added music to the main menu by importing the Minim library in processing. 
+
+Score & Health
+The score class is used to display the score on the screen when something in the game occurs, but our group realized that some of our puzzles did not have anything that could be added to a score total, so for right now it is a placeholder. 
